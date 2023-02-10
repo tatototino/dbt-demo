@@ -1,0 +1,31 @@
+demo:
+  target: trino-mariadb1
+  outputs:
+    trino-mariadb1:
+      type: trino
+      method: none  # optional, one of {none | ldap | kerberos | oauth | jwt | certificate}
+      database: mariadb
+      user: teste
+      host: 192.168.15.108
+      port: 2020
+      schema: teste
+      http_scheme: http
+
+    trino-mariadb2:
+      type: trino
+      method: none  # optional, one of {none | ldap | kerberos | oauth | jwt | certificate}
+      database: mariadb2
+      user: teste
+      host: 192.168.15.108
+      port: 2020
+      schema: teste
+      http_scheme: http
+    mariadb1-teste:
+      type: mysql
+      server: 192.168.15.108
+      port: 3307
+      schema: teste
+      username: root
+      password: root
+      ssl_disabled: True
+

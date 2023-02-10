@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: trino-mariadb # this is the source_name
+    database: mariadb
+    schema: teste
+    tables:
+      - name: persons # this is the table_name
+        columns:
+          - name: Lastname
+            description: ultimo nome da pessoa
+            type: varchar
+            tests:
+              - not_null
+          - name: Firstname
+            description: primeiro nome da pessoa
+            type: varchar
+            tests:
+              - not_null
+          - name: Address
+            description: endereco da pessoa
+            type: varchar
+            tests:
+              - not_null
+          - name: City
+            description: cidade  da pessoa
+            type: varchar
+            tests:
+              - not_null
+
+  - name: hive # this is the source_name
+    database: hive
+    schema: teste
+
+    tables:
+      - name: pessoas # this is the table_name
+        columns:
+          - name:  nome
+            description:  nome da pessoa
+            type: varchar
+            tests:
+              - not_null
+          - name:  idade
+            description:  idade da pessoa
+            type: int
+            tests:
+              - not_null
+          - name:  apelido
+            description:  apelido da pessoa
+            type: varchar
+            tests:
+              - not_null
